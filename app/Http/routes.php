@@ -11,6 +11,5 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/','LocationControlller@index');
+Route::post('locationsearch','LocationControlller@locationsearch' )->name('locationsearch');

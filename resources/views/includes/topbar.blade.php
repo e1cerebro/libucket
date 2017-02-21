@@ -7,7 +7,7 @@
 						</a>
 						<!-- start: LOGO -->
 						<a class="navbar-brand" href="index-2.html">
-							<img src="assets/images/logo.png" alt="Rapido"/>
+							<img src="assets/images/icon.png" alt="Rapido"/>
 						</a>
 						<!-- end: LOGO -->
 					</div>
