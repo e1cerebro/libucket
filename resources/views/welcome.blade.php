@@ -6,123 +6,7 @@
 								<div class="panel panel-white" style="min-height : 10000%;">
 									<div class="panel-body" >
 									    <div class="row">
-								        	<div class="panel uploads">
-                									<div class="panel-body panel-portfolio no-padding">
-                										<div class="portfolio-grid portfolio-hover">
-                											<div class="overlayer bottom-left fullwidth">
-                												<div class="overlayer-wrapper">
-                													<div class="padding-20">
-                														<h4 class="text-white no-margin">Recent Uploads</h4>
-                														<h5 class="text-white">Take a look at what other users are uploading right now</h5>
-                													</div>
-                												</div>
-                											</div>
-                											<div class="e-slider owl-carousel owl-theme portfolio-grid portfolio-hover" data-plugin-options='{"pagination": false, "stopOnHover": true}'>
-                												<div class="item">
-                													<img src="assets/images/image01.jpg" alt="">
-                													<div class="caption">
-                														<h2 class="caption-title">Hover Style #10</h2>
-                														<p class="caption-description">
-                															A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.
-                														</p>
-                														<a href="#" class="caption-button">
-                															Read More
-                														</a>
-                													</div>
-                												</div>
-                												<div class="item">
-                													<img src="assets/images/image02.jpg" alt="">
-                													<div class="caption">
-                														<h2 class="caption-title">Hover Style #10</h2>
-                														<p class="caption-description">
-                															A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.
-                														</p>
-                														<a href="#" class="caption-button">
-                															Read More
-                														</a>
-                													</div>
-                												</div>
-                												<div class="item">
-                													<img src="assets/images/image03.jpg" alt="">
-                													<div class="caption">
-                														<h2 class="caption-title">Hover Style #10</h2>
-                														<p class="caption-description">
-                															A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.
-                														</p>
-                														<a href="#" class="caption-button">
-                															Read More
-                														</a>
-                													</div>
-                												</div>
-                												<div class="item">
-                													<img src="assets/images/image04.jpg" alt="">
-                													<div class="caption">
-                														<h2 class="caption-title">Hover Style #10</h2>
-                														<p class="caption-description">
-                															A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.
-                														</p>
-                														<a href="#" class="caption-button">
-                															Read More
-                														</a>
-                													</div>
-                												</div>
-                											</div>
-                										</div>
-                										<div class="partition partition-white padding-15">
-                											<div class="navigator">
-                												<a href="#" class="circle-50 partition-white owl-prev"><i class="fa fa-chevron-left text-extra-large"></i></a>
-                												<a href="#" class="circle-50 partition-white owl-next"><i class="fa fa-chevron-right text-extra-large"></i></a>
-                											</div>
-                											<div class="clearfix space5">
-                												<div class="col-xs-12 text-center no-padding space10">
-                													Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                												</div>
-                												<div class="col-xs-12 text-center no-padding">
-                													<a class="tags">
-                														New York
-                													</a>
-                													<a class="tags">
-                														London
-                													</a>
-                													<a class="tags">
-                														Rome
-                													</a>
-                													<a class="tags">
-                														Paris
-                													</a>
-                													<a class="tags">
-                														Berlin
-                													</a>
-                													<a class="tags">
-                														Amsterdam
-                													</a>
-                													<a class="tags">
-                														Madrid
-                													</a>
-                												</div>
-                											</div>
-                											<div class="clearfix padding-5">
-                												<div class="col-xs-4 text-center no-padding">
-                													<div class="border-right border-dark">
-                														<a href="#" class="text-dark">
-                															<i class="fa fa-heart-o text-red"></i> 250
-                														</a>
-                													</div>
-                												</div>
-                												<div class="col-xs-4 text-center no-padding">
-                													<div class="border-right border-dark">
-                														<a href="#" class="text-dark">
-                															<i class="fa fa-bookmark-o text-green"></i> 20
-                														</a>
-                													</div>
-                												</div>
-                												<div class="col-xs-4 text-center no-padding">
-                													<a href="#" class="text-dark"><i class="fa fa-comment-o text-azure"></i> 544</a>
-                												</div>
-                											</div>
-                										</div>
-                									</div>
-                								</div>
+								        	@include('includes.slider')
 									    </div>
 									<!--/emd of first row-->
 										<div class="row">
@@ -158,9 +42,18 @@
 								</div>
 							</div>
 										       <div class="col-md-4">
+										       	<h4 class="panel-title"><span class="text-bold">Search Library</span></h4>
+										       	<p>Please enter the library name in the box below:</p>
 										              <form action="{{route('locationsearch')}}" class="deleteform" method="post" accept-charset="utf-8">
                                     						{{ csrf_field() }}
                                     						<input name="name" class="form-control input-lg" placeholder="Enter your search keyword..." list="locations" type="text" id="name" size="70"/>
+                                    						<br/>
+                                    						@if(strlen(session("searcherror")) > 1)
+                                    						   <div class="alert alert-danger">
+																    <button data-dismiss="alert" class="close">×</button>
+																   	{!! session("searcherror") !!}
+																</div>
+                                    						@endif
                                     						<input type="hidden" name="source" value="1"/>
                                     						<datalist id="locations">
                                     						    @foreach($locations as $location)
@@ -168,7 +61,7 @@
                                     						    @endforeach
                                     						</datalist>
                                     						<br/>
-                                    						<button type="submit" id="search" class="btn btn-dark-azure pull-right">Search <i class="fa fa-search"></i> </button>
+                                    						<button type="submit" id="search" class="btn btn-dark-azure btn-lg pull-right">Search <i class="fa fa-search"></i> </button>
 					                                 </form>
 										       </div>
 										       
