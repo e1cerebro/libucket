@@ -1,3 +1,6 @@
+<?php 
+
+?>
 <div id="horizontal-menu" class="navbar navbar-inverse hidden-sm hidden-xs inner">
 				<div class="container">
 					<div class="navbar-collapse">
@@ -9,7 +12,7 @@
 							</li>
 							<li>
 								<a href="{{route('all')}}">
-								All Locations
+								   Libraries
 								</a>
 							</li>
 						
@@ -30,20 +33,15 @@
 						</div>
 						<div class="user-profile border-top padding-horizontal-10 block">
 							<div class="inline-block">
-								<img src="assets/images/avatar-1.jpg" alt="">
+								<img src="assets/images/logo2.png" alt="">
 							</div>
 							<div class="inline-block">
-								<h5 class="no-margin"> Welcome </h5>
-								<h4 class="no-margin"> Peter Clark </h4>
-								<a class="btn user-options sb_toggle">
-									<i class="fa fa-cog"></i>
-								</a>
 							</div>
 						</div>
 					</div>
 					<!-- end: SIDEBAR -->
 				</div>
-				<div class="slide-tools">
+				<!--<div class="slide-tools">
 					<div class="col-xs-6 text-left no-padding">
 						<a class="btn btn-sm status">
 							Status <i class="fa fa-dot-circle-o text-green"></i> Online
@@ -54,5 +52,5 @@
 							<i class="fa fa-power-off"></i> Log Out
 						</a>
 					</div>
-				</div>
+				</div>-->
 			</nav>

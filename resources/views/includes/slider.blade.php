@@ -11,7 +11,7 @@
 				</div>
 				<div class="e-slider owl-carousel owl-theme portfolio-grid portfolio-hover" data-plugin-options='{"pagination": false, "stopOnHover": true}'>
 					<div class="item">
-						<img src="assets/images/image01.jpg" alt="">
+						<img src="assets/images/img-4.jpg" alt="">
 						<div class="caption">
 							<h2 class="caption-title">Hover Style #10</h2>
 							<p class="caption-description">
@@ -23,7 +23,7 @@
 						</div>
 					</div>
 					<div class="item">
-						<img src="assets/images/image02.jpg" alt="">
+						<img src="assets/images/img-1.gif" alt="">
 						<div class="caption">
 							<h2 class="caption-title">Hover Style #10</h2>
 							<p class="caption-description">
@@ -35,7 +35,7 @@
 						</div>
 					</div>
 					<div class="item">
-						<img src="assets/images/image03.jpg" alt="">
+						<img src="assets/images/img-2.jpg" alt="">
 						<div class="caption">
 							<h2 class="caption-title">Hover Style #10</h2>
 							<p class="caption-description">
@@ -47,7 +47,7 @@
 						</div>
 					</div>
 					<div class="item">
-						<img src="assets/images/image04.jpg" alt="">
+						<img src="assets/images/img-5.jpg" alt="">
 						<div class="caption">
 							<h2 class="caption-title">Hover Style #10</h2>
 							<p class="caption-description">

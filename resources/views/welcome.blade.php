@@ -1,5 +1,16 @@
 @extends('layouts.master')
 @section("title", "Welcome")
+@section('breadcrumbs')
+	<div class="row">
+	<div class="col-md-12">
+		<ol class="breadcrumb">
+			<li class="active">
+				Welcome
+			</li>
+		</ol>
+	</div>
+</div>
+@endsection
 @section('content')
 <div class="row">
      <div class="col-md-12">
@@ -23,18 +34,13 @@
 													<h4 class="no-margin">Welcome</h4>
 												</div>
 												<div class="panel-body space10">
-													<div class="note-short-content">
-														This website is about showing the information of libraries in Windsor. For users, there are two ways to get libraries' data. The first one is that users are able to input specific library name to get library data on the index page. The page would show the location marker on the google map and provide other information below the map. Another option is that they can click the link on the index page which call the library list page and then choose any library name to get the same information.
+													<div class="note-short-content text-justify">
+														This website provides information of libraries in Windsor. For users, there are two ways to get libraries' data. The first one is that users are able to input specific library name to get library data on the index page. The page would show the location marker on the google map and provide other information below the map. Another option is that they can click the link on the index page which call the library list page and then choose any library name to get the same information.
 													</div>
 											
 												</div>
 											   	<div class="panel-footer">
-										        <div class="avatar-note"><img src="assets/images/avatar-4-small.jpg" alt="">
-													</div>
-													<span class="author-note">Admin</span>
-													<time class="timestamp" title="2014-02-18T00:00:00-05:00">
-														2014-02-18T00:00:00-05:00
-													</time>
+										        <div class=""><i class="fa fa-thumb-tack fa-lg"></i> Chris</div>
 												</div>
 											</div>
 										</div>
@@ -42,7 +48,8 @@
 								</div>
 							</div>
 										       <div class="col-md-4">
-										       	<h4 class="panel-title"><span class="text-bold">Search Library</span></h4>
+										       	<h4 class="panel-title"><span class="text-bold text-primary">Search Library</span></h4>
+										       	<hr/>
 										       	<p>Please enter the library name in the box below:</p>
 										              <form action="{{route('locationsearch')}}" class="deleteform" method="post" accept-charset="utf-8">
                                     						{{ csrf_field() }}

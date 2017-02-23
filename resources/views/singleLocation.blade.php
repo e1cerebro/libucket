@@ -1,27 +1,40 @@
 @extends('layouts.master')
 @section("title", "Welcome")
+@section('breadcrumbs')
+	<div class="row">
+	<div class="col-md-12">
+		<ol class="breadcrumb">
+			<li>
+				<a href="{{url('/')}}">Welcome</a>
+			</li>
+			<li class="active">
+				{{$library[0]['library'] }}
+			</li>
+		</ol>
+	</div>
+</div>
+@endsection
 @section('content')
 <div class="row">
      <div class="col-md-12">
 		<div class="panel panel-white" style="min-height : 10000%;">
 			<div class="panel-body" >
 			    <div class="row">
-		        	<div class="panel uploads">
-					       <div id="map" style="width:100%;height:500px"></div>
-					       <div class="alert alert-block alert-info fade in">
-								<button data-dismiss="alert" class="close" type="button">
-									&times;
-								</button>
+			    	
+			    	<div class="col-md-3">
+			    		 <div class="alert alert-block alert-info fade in">
 								<h4 class="alert-heading"><i class="fa fa-home"></i> {{$library[0]['library'] }}</h4>
-								<p>
-								    {{$library[0]['address'] }}
-								    <a href="#" class="btn btn-blue pull-right">Visit <i class="fa fa-arrow-circle-right"></i></a>
-								    
-								</p>
+								<hr/>
+								<p><i class="fa  fa-road"></i> {{$library[0]['address'] }}</p>
+								 <p><a href="#" class="btn btn-blue pull-right">Visit <i class="fa fa-arrow-circle-right"></i></a><br/></p>
 							    <br/>
 							</div>
-
-					</div>
+			    	</div>
+		        	<div class="col-md-9">
+		        		<div class="panel uploads">
+					       <div id="map" style="width:100%;height:500px"></div>
+					 	</div>
+		        	</div>
 			    </div>
 			<!--/emd of first row-->
 		

@@ -7,7 +7,7 @@
 						</a>
 						<!-- start: LOGO -->
 						<a class="navbar-brand" href="index-2.html">
-							<img src="assets/images/icon.png" alt="Rapido"/>
+							<img src="assets/images/logo.png" alt="Rapido"/>
 						</a>
 						<!-- end: LOGO -->
 					</div>
@@ -15,7 +15,7 @@
 						<!-- start: TOP NAVIGATION MENU -->
 						<ul class="nav navbar-right">
 							<!-- start: USER DROPDOWN -->
-							<li class="dropdown current-user">
+						<!--	<li class="dropdown current-user">
 								<a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" data-close-others="true" href="#">
 									<img src="assets/images/avatar-1-small.jpg" class="img-circle" alt=""> <span class="username hidden-xs">Peter Clark</span> <i class="fa fa-caret-down "></i>
 								</a>
@@ -46,13 +46,13 @@
 										</a>
 									</li>
 								</ul>
-							</li>
+							</li>-->
 							<!-- end: USER DROPDOWN -->
-							<li class="right-menu-toggle">
+							<!--<li class="right-menu-toggle">
 								<a href="#" class="sb-toggle-right">
 									<i class="fa fa-globe toggle-icon"></i> <i class="fa fa-caret-right"></i> <span class="notifications-count badge badge-default hide"> 3</span>
 								</a>
-							</li>
+							</li>-->
 						</ul>
 						<!-- end: TOP NAVIGATION MENU -->
 					</div>

@@ -50,7 +50,7 @@
 		<link rel="stylesheet" href="assets/css/themes/theme-style8.css" type="text/css" id="skin_color">
 		<link rel="stylesheet" href="assets/css/print.css" type="text/css" media="print"/>
 		<!-- end: CORE CSS -->
-		<link rel="shortcut icon" href="favicon.ico" />
+		<link rel="shortcut icon" href="assets/images/favicon.png" />
 		@yield('css')
 	</head>
 	<!-- end: HEAD -->
@@ -76,7 +76,7 @@
 						<!-- start: PAGE HEADER -->
 					  <!-- end: PAGE HEADER -->
 						<!-- start: BREADCRUMB -->
-						@include('includes.breadcrumbs')
+						@yield('breadcrumbs')
 						<!-- end: BREADCRUMB -->
 						<!-- start: PAGE CONTENT -->
 						    @yield('content')
