@@ -211,6 +211,7 @@
 			</div>
 			<!-- end: SUBVIEW SAMPLE CONTENTS -->
 		</div>
+		@yield('optionals')
 		<!-- start: MAIN JAVASCRIPTS -->
 		<!--[if lt IE 9]>
 		<script src="assets/plugins/respond.min.js"></script>

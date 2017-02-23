@@ -16,3 +16,5 @@ Route::get('/','LocationControlller@index');
 Route::get('/everylocations','LocationControlller@all')->name('all');
 //This handles the search when a user searches for a single library through a post request
 Route::post('locationsearch','LocationControlller@locationsearch' )->name('locationsearch');
+//returns all the locations in the city
+Route::get('/contact','ContactController@contact')->name('contact');
