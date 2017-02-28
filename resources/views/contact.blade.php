@@ -31,14 +31,25 @@
 					</p>
 					<p>
 						@if (count($errors) > 0)
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
+						    <div class="alert alert-danger">
+						        <ul>
+						            @foreach ($errors->all() as $error)
+						                <li>{{ $error }}</li>
+						            @endforeach
+						        </ul>
+						    </div>
+						    
+						@endif
+						@if ($successmessage)
+						    <div class="alert alert-success">
+						        {{  $successmessage }}
+						    </div>
+						@endif
+						@if ($errormessage)
+						    <div class="alert alert-danger">
+						        {{ $errormessage }}
+						    </div>
+						@endif
 
 					</p>
 					<form class="form-register" action="{{route('verify')}}" id="form" method="post">

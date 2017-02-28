@@ -22,4 +22,10 @@ Route::get('/contact','ContactController@contact')->name('contact');
 Route::post('contact','ContactController@verify' )->name('verify');
 //
 Route::get('about','AboutController@index' )->name('about');
+//
+Route::get('sendemail', 'Email@sendemail');
+Route::get('send',function(){
+    
+    return view('emails.welcome');
+});
 

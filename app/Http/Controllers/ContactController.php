@@ -11,34 +11,50 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Location;
+use  App\Http\Controllers\Email;
 
 
 class ContactController extends Controller
 {
-    private $message = "";
+    private $errormessage = "";
+    private $successmessage = "";
+    private $emailobject="";
+
+     public function __construct()
+    {
+        //Calling a method that is from the OtherController
+        $this->emailobject = new Email();
+    }
     
-    /*
+   /*
         This function returns the contact view. 
     */
     public function contact(){
         
              return view('contact');
     }
-    
+
     
     public function verify(Request $request){
-        
-        //validate the user data before sending the email
+          
+       //validate the user data before sending the email
        $this->validate($request, [
             'name'  => 'required|min:2',
             'email' => 'required|email',
             'message' => 'required|min:5',
            'g-recaptcha-response' =>'required|min:10'
         ]);
-      
-      return view('contact');
-
         
+        if( $this->emailobject->sendemail($request->name, $request->email, $request->message) == true){
+                $this->successmessage = 'Thanks for contacting us!';
+                return view('contact', array('errormessage'=>$this->errormessage,'successmessage'=>$this->successmessage));
+        }else{
+                $this->errormessage = 'We could not complete your request at this time, try again later.';
+                return view('contact', array('errormessage'=>$this->errormessage, 'successmessage'=>$this->successmessage));
+        }
+        
+          
+
     }
     
     
