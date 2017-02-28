@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section("title", "All")
+@section("title", "Libraries")
 @section('breadcrumbs')
 	<div class="row">
 	<div class="col-md-12">
@@ -16,7 +16,7 @@
 @endsection
 @section('content')
 <div class="row">
-     <div class="col-md-12">
+     <div class="col-md-12 ">
 		<div class="panel panel-white" style="min-height : 10000%;">
 			<div class="panel-body" >
 			    <div class="row">
@@ -25,36 +25,43 @@
 						<hr/>
 		        		<!--Accordion starts here-->
 		   <div class="panel-group accordion" id="accordion">
-			
-			@foreach($locations as $location)
+		
+			@forelse ($locations as $location)
 				<div class="panel panel-white">
-					<div class="panel-heading">
-						<h5 class="panel-title">
-						<a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse{{$location->id}}">
-							<i class="icon-arrow"></i> {{$location->library}}
-						</a></h5>
-					</div>
-				
-					<div id="collapse{{$location->id}}" class="panel-collapse collapse">
-						<div class="panel-body">
-						   	<span class="text-info">
-						   		<i class="fa  fa-road"></i> {{$location->address}}
-						   	</span>
-						   
-								<div class="pull-right">
-								<a class="" target="_blank" href="{{$location->url}}">
-								<i class="fa fa-globe"></i>	Website 
-								</a>
-								<span class="text-primary"><i class="fa fa-ellipsis-v"></i></span>
-								<a class="view_map_bt" latitude="{{$location->y}}" longtitude="{{$location->x}}" url="{{$location->url}}" href="javascript:;" data-target=".bs-example-modal-lg" data-toggle="modal">
-								<i class="fa  fa-map-marker"></i> Map 
-								</a>
+								<div class="panel-heading">
+									<h5 class="panel-title">
+									<a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse{{$location->id}}">
+										<i class="icon-arrow"></i>{{$location->library}}
+									</a></h5>
 								</div>
-								
-						</div>
-					</div>
+							
+								<div id="collapse{{$location->id}}" class="panel-collapse collapse">
+									<div class="panel-body">
+									   	<span class="text-info">
+									   		<i class="fa  fa-road"></i> {{$location->address}}
+									   	</span>
+									   
+											<div class="pull-right">
+											<a class="" target="_blank" href="{{$location->url}}">
+											<i class="fa fa-globe"></i>	Website 
+											</a>
+											<span class="text-primary"><i class="fa fa-ellipsis-v"></i></span>
+											<a class="view_map_bt" latitude="{{$location->y}}" longtitude="{{$location->x}}" url="{{$location->url}}" href="javascript:;" data-target=".bs-example-modal-lg" data-toggle="modal">
+											<i class="fa  fa-map-marker"></i> Map 
+											</a>
+											</div>
+											
+									</div>
+								</div>
+							</div>
+			@empty
+				<div class="alert alert-danger">
+				
+					<strong>Oh snap!</strong>
+				
+					Search return an empty result.
 				</div>
-			@endforeach
+			@endforelse
 			
        	  </div>
 
@@ -74,7 +81,9 @@
 		        	<div class="hidden map">
 		        		<div class="panel uploads">
 <!--		        			<button class="btn btn-sm btn-default pull-right collapse_bt"><i class="fa fa-minus-circle"></i></button>
--->					       <div id="map" style="width:100%;height:500px"></div>
+-->					       <div class="row">
+								<div id="map" style="width:100%;min-height:350px"></div>
+							</div>
 					    </div>
 		        	</div>
 			    </div>
@@ -119,17 +128,11 @@
 
 function collapsemenu(){
 	$(".menu").removeClass("col-md-12");
-	$(".menu").addClass("col-md-4");
+	$(".menu").addClass("col-md-5 ");
 }
 
 function expandmenu(){
-	/*$(".menu").removeClass("col-md-4");
-	$(".menu").addClass("col-md-12");*/
-	alert();
-}
-
-function expandmenu(){
-	$(".map").addClass("col-md-8");
+	$(".map").addClass("col-md-7");
 }
   
 function showmap(){

@@ -6,7 +6,7 @@
 							<i class="fa fa-bars"></i>
 						</a>
 						<!-- start: LOGO -->
-						<a class="navbar-brand" href="index-2.html">
+						<a class="navbar-brand" href="{{url('/')}}">
 							<img src="assets/images/logo.png" alt="Rapido"/>
 						</a>
 						<!-- end: LOGO -->

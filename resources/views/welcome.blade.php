@@ -13,19 +13,37 @@
 @endsection
 @section('content')
 <div class="row">
-     <div class="col-md-12">
-								<div class="panel panel-white" style="min-height : 10000%;">
-									<div class="panel-body" >
-									    <div class="row">
-								        	@include('includes.slider')
-									    </div>
-									<!--/emd of first row-->
-										<div class="row">
-										    
-										    <div class="container">
+     <div class="col-md-12 col-sm-12 col-xs-12">
+		<div class="panel panel-white" style="min-height : 10000%;">
+			<div class="panel-body" >
+			    <div class="row visible-sm visible-xs">
+		        	<div class="container">
+		        		@include('includes.slider')
+		        	</div>
+			    </div>
+			    <div class="row visible-md visible-lg">
+			    		<div class="container">
+			    			<div class="jumbotron">
+								<h1>Welcome to Windsor Libraries</h1>
+								<p class="lead">
+									We provide you with details about libraries in the city of Windsor, Ontario.
+								</p>
+								<p>
+									<a role="button" href="{{url('about')}}" class="btn btn-lg btn-success">
+										Learn more
+									</a>
+								</p>
+							</div>
+			    		</div>
+			    	
+			    </div>
+			<!--/emd of first row-->
+				<div class="row">
+				    
+				    <div class="container">
 										       
-										       <div class="col-md-8">
-										           	<div id="notes">
+							<div class="col-md-8 col-sm-12 col-xs-12">
+								<div id="notes">
 									<div class="panel panel-note">
 										<div class="e-slider owl-carousel owl-theme">
 											
@@ -40,44 +58,44 @@
 											
 												</div>
 											   	<div class="panel-footer">
-										        <div class=""><i class="fa fa-thumb-tack fa-lg"></i> Chris</div>
+										        <div class=""><i class="fa fa-pencil fa-lg"></i> Chris</div>
 												</div>
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-										       <div class="col-md-4">
-										       	<h4 class="panel-title"><span class="text-bold text-primary">Search Library</span></h4>
-										       	<hr/>
-										       	<p>Please enter the library name in the box below:</p>
-										              <form action="{{route('locationsearch')}}" class="deleteform" method="post" accept-charset="utf-8">
-                                    						{{ csrf_field() }}
-                                    						<input name="name" class="form-control input-lg" placeholder="Enter your search keyword..." list="locations" type="text" id="name" size="70"/>
-                                    						<br/>
-                                    						@if(strlen(session("searcherror")) > 1)
-                                    						   <div class="alert alert-danger">
-																    <button data-dismiss="alert" class="close">×</button>
-																   	{!! session("searcherror") !!}
-																</div>
-                                    						@endif
-                                    						<input type="hidden" name="source" value="1"/>
-                                    						<datalist id="locations">
-                                    						    @foreach($locations as $location)
-                                    						     <option value="{{$location->library }}"></option>
-                                    						    @endforeach
-                                    						</datalist>
-                                    						<br/>
-                                    						<button type="submit" id="search" class="btn btn-dark-azure btn-lg pull-right">Search <i class="fa fa-search"></i> </button>
-					                                 </form>
-										       </div>
+					       <div class="col-md-4 col-sm-12 col-xs-12">
+					       	<h4 class="panel-title"><span class="text-bold text-primary">Search Library</span></h4>
+					       	<hr/>
+					       	<p>Please enter the library name in the box below:</p>
+					              <form action="{{route('locationsearch')}}" class="deleteform" method="post" accept-charset="utf-8">
+                						{{ csrf_field() }}
+                						<input name="name" class="form-control input-lg" placeholder="Enter your search keyword..." list="locations" type="text" id="name" size="70"/>
+                						<br/>
+                						@if(strlen(session("searcherror")) > 1)
+                						   <div class="alert alert-danger">
+											    <button data-dismiss="alert" class="close">×</button>
+											   	{!! session("searcherror") !!}
+											</div>
+                						@endif
+                						<input type="hidden" name="source" value="1"/>
+                						<datalist id="locations">
+                						    @foreach($locations as $location)
+                						     <option value="{{$location->library }}"></option>
+                						    @endforeach
+                						</datalist>
+                						<br/>
+                						<button type="submit" id="search" class="btn btn-dark-azure btn-lg pull-right">Search <i class="fa fa-search"></i> </button>
+                                 </form>
+					       </div>
 										       
-										    </div>
-										</div>
-									
-									</div>
-								</div>
+							    </div>
 							</div>
+						
+						</div>
+					</div>
+				</div>
 </div>
 
 @endsection
@@ -86,13 +104,13 @@
     
             
 
-		$(window).load(function(){
-			
-			if (typeof(Storage) !== "undefined") {
-			
-				getLocation();
-			}
-		});
+$(window).load(function(){
+	
+	if (typeof(Storage) !== "undefined") {
+	
+		getLocation();
+	}
+});
 		
 var x = document.getElementById("demo");
 

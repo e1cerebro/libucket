@@ -6,7 +6,7 @@
 					<div class="navbar-collapse">
 						<ul class="nav navbar-nav">
 							<li>
-								<a href="{{url('/')}}">
+								<a href="{{route('index')}}">
 									Home
 								</a>
 							</li>
@@ -16,10 +16,16 @@
 								</a>
 							</li>
 							<li>
+								<a href="{{route('about')}}">
+								   About
+								</a>
+							</li>
+							<li>
 								<a href="{{route('contact')}}">
 								   Contact
 								</a>
 							</li>
+							
 						
 						</ul>
 					</div>
@@ -38,7 +44,7 @@
 						</div>
 						<div class="user-profile border-top padding-horizontal-10 block">
 							<div class="inline-block">
-								<img src="assets/images/logo2.png" alt="">
+								<a href="{{route('index')}}"><img src="assets/images/logo2.png" alt=""></a>
 							</div>
 							<div class="inline-block">
 							</div>

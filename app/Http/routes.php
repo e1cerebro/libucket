@@ -11,10 +11,15 @@
 |
 */
 //The index route. its the default route when the user visit the website
-Route::get('/','LocationControlller@index');
+Route::get('/','LocationControlller@index')->name('index');
 //returns all the locations in the city
-Route::get('/everylocations','LocationControlller@all')->name('all');
+Route::get('/locations','LocationControlller@all')->name('all');
 //This handles the search when a user searches for a single library through a post request
 Route::post('locationsearch','LocationControlller@locationsearch' )->name('locationsearch');
 //returns all the locations in the city
 Route::get('/contact','ContactController@contact')->name('contact');
+//
+Route::post('contact','ContactController@verify' )->name('verify');
+//
+Route::get('about','AboutController@index' )->name('about');
+

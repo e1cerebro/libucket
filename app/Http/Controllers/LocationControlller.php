@@ -23,6 +23,7 @@ class LocationControlller extends Controller
     */
     public function index(){
         
+        
         //Get all the Library Locations
         $locations = Location::all();
         
@@ -64,7 +65,8 @@ class LocationControlller extends Controller
      */
     public function all(){
         
-        $locations = Location::all();
+        $locations = Location::orderBy('library', 'asc')
+                               ->get();
         return view('alllocations', array("locations"=>$locations));
     }
     

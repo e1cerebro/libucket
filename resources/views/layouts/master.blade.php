@@ -51,6 +51,8 @@
 		<link rel="stylesheet" href="assets/css/print.css" type="text/css" media="print"/>
 		<!-- end: CORE CSS -->
 		<link rel="shortcut icon" href="assets/images/favicon.png" />
+		    <script src='https://www.google.com/recaptcha/api.js'></script>
+
 		@yield('css')
 	</head>
 	<!-- end: HEAD -->
